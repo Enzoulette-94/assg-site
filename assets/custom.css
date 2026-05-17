@@ -1,0 +1,13 @@
+/* Box-shadow décalé pour les boutons */
+.btn-shadow-purple { box-shadow: 4px 4px 0 #4A2A8A; }
+.btn-shadow-purple:hover { box-shadow: 2px 2px 0 #4A2A8A; transform: translate(2px, 2px); }
+.btn-shadow-yellow { box-shadow: 4px 4px 0 #bba800; }
+.btn-shadow-yellow:hover { box-shadow: 2px 2px 0 #bba800; transform: translate(2px, 2px); }
+
+/* Border-top colorée des cartes activité */
+.card-top-purple { border-top: 4px solid #7B4FD4; border-radius: 0 0 12px 12px; }
+.card-top-yellow { border-top: 4px solid #FFE533; border-radius: 0 0 12px 12px; }
+.card-top-pink   { border-top: 4px solid #E87BB5; border-radius: 0 0 12px 12px; }
+
+/* Transition boutons */
+.btn-transition { transition: transform 0.1s, box-shadow 0.1s; }

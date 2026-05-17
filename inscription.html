@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription — A.S.S.G</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            purple:         '#7B4FD4',
+            'purple-light': '#A87CE8',
+            'purple-dark':  '#4A2A8A',
+            'purple-pale':  '#EDE8FA',
+            yellow:         '#FFE533',
+            'yellow-dark':  '#bba800',
+            pink:           '#E87BB5',
+            'pink-pale':    '#FBEAF0',
+            'pink-dark':    '#72243E',
+            'gray-bg':      '#F5F4FA',
+            'gray-text':    '#6b6880',
+          },
+          fontFamily: {
+            display: ['Boogaloo', 'cursive'],
+            body:    ['Nunito', 'sans-serif'],
+          },
+          borderRadius: {
+            DEFAULT: '12px',
+            sm:      '8px',
+            pill:    '30px',
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/custom.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-pink-pale font-body">
+
+  <!-- HEADER -->
+  <header class="px-4 pt-4 pb-2">
+    <nav x-data="{ open: false }" class="bg-purple rounded-xl px-6 py-4 flex items-center justify-between relative">
+      <a href="/index.html" class="flex items-center gap-2 flex-shrink-0">
+        <span class="font-display text-3xl text-white">A.S.S.G</span>
+        <span class="font-display text-xl text-yellow hidden sm:inline">· St-Genevière</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="/index.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow">Accueil</a>
+        <a href="/club.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow">Le club</a>
+        <a href="/activites.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow">Activités</a>
+        <a href="/actualites.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow">Actualités</a>
+        <a href="/inscription.html" class="font-body font-bold text-sm text-white hover:text-yellow underline decoration-yellow">Inscription</a>
+        <a href="/contact.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button @click="open = !open" class="md:hidden text-white bg-white/20 rounded-lg px-3 py-2 font-body font-bold text-xs">Menu</button>
+      </div>
+      <div x-show="open" x-transition class="absolute top-full left-0 right-0 bg-purple-dark rounded-xl mt-2 p-5 md:hidden z-50 shadow-xl">
+        <div class="flex flex-col gap-3">
+          <a href="/index.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow py-1">Accueil</a>
+          <a href="/club.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow py-1">Le club</a>
+          <a href="/activites.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow py-1">Activités</a>
+          <a href="/actualites.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow py-1">Actualités</a>
+          <a href="/inscription.html" class="font-body font-bold text-sm text-white py-1 underline decoration-yellow">Inscription</a>
+          <a href="/contact.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow py-1">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="px-4 py-6">
+      <div class="relative bg-purple rounded-xl px-8 py-16 overflow-hidden max-w-6xl mx-auto">
+        <div class="absolute -top-12 -right-12 w-64 h-64 bg-white/5 rounded-full"></div>
+        <div class="absolute -bottom-16 left-1/4 w-48 h-48 bg-yellow/10 rounded-full"></div>
+        <div class="relative z-10 text-center">
+          <span class="inline-block bg-yellow text-black font-body font-bold text-sm rounded-pill px-4 py-1 mb-6">Rentrée 2026</span>
+          <h1 class="font-display text-5xl text-white mb-4">Procédure d'inscription</h1>
+          <p class="font-body text-base text-white/75 max-w-xl mx-auto leading-relaxed">Pour rejoindre l'A.S.S.G, suivez les étapes ci-dessous. Pour toute question, contactez directement le secrétariat.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÉTAPES DE LA PROCÉDURE -->
+    <section class="px-4 py-10">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-display text-4xl text-purple-dark mb-8">Les étapes</h2>
+        <div class="space-y-5">
+
+          <!-- Étape 1 -->
+          <div class="bg-white rounded-xl p-6 flex gap-6 items-start">
+            <div class="flex-shrink-0 w-12 h-12 bg-purple rounded-xl flex items-center justify-center">
+              <span class="font-display text-2xl text-white">1</span>
+            </div>
+            <div>
+              <h3 class="font-display text-2xl text-purple-dark mb-2">Prendre contact avec le secrétariat</h3>
+              <p class="font-body text-sm text-gray-text leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Contactez-nous par téléphone au <span class="font-bold text-purple-dark">01 XX XX XX XX</span> ou par email à <span class="font-bold text-purple-dark">contact@assg.fr</span> pour vérifier les disponibilités dans l'activité souhaitée et obtenir les informations pratiques pour votre enfant.</p>
+            </div>
+          </div>
+
+          <!-- Étape 2 -->
+          <div class="bg-white rounded-xl p-6 flex gap-6 items-start">
+            <div class="flex-shrink-0 w-12 h-12 bg-purple rounded-xl flex items-center justify-center">
+              <span class="font-display text-2xl text-white">2</span>
+            </div>
+            <div>
+              <h3 class="font-display text-2xl text-purple-dark mb-2">Rassembler les documents nécessaires</h3>
+              <p class="font-body text-sm text-gray-text leading-relaxed mb-3">Vous devrez fournir les documents suivants lors de votre inscription :</p>
+              <ul class="space-y-1">
+                <li class="font-body text-sm text-gray-text">— Certificat médical de non contre-indication à la pratique sportive (de moins de 3 mois)</li>
+                <li class="font-body text-sm text-gray-text">— Photo d'identité récente de l'enfant</li>
+                <li class="font-body text-sm text-gray-text">— Pièce d'identité du parent ou tuteur légal</li>
+                <li class="font-body text-sm text-gray-text">— Justificatif de domicile</li>
+                <li class="font-body text-sm text-gray-text">— RIB (pour le règlement par prélèvement, si souhaité)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Étape 3 -->
+          <div class="bg-white rounded-xl p-6 flex gap-6 items-start">
+            <div class="flex-shrink-0 w-12 h-12 bg-purple rounded-xl flex items-center justify-center">
+              <span class="font-display text-2xl text-white">3</span>
+            </div>
+            <div>
+              <h3 class="font-display text-2xl text-purple-dark mb-2">Régler la cotisation annuelle</h3>
+              <p class="font-body text-sm text-gray-text leading-relaxed mb-4">La cotisation est à régler au moment de l'inscription. Plusieurs modes de paiement sont acceptés :</p>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-purple-pale rounded-xl px-4 py-3">
+                  <div class="font-body font-bold text-xs uppercase tracking-widest text-gray-text mb-1">Baby Gym</div>
+                  <div class="font-display text-2xl text-purple-dark">90 €<span class="font-body text-sm text-gray-text">/an</span></div>
+                </div>
+                <div class="bg-purple-pale rounded-xl px-4 py-3">
+                  <div class="font-body font-bold text-xs uppercase tracking-widest text-gray-text mb-1">Jeux Tradi</div>
+                  <div class="font-display text-2xl text-purple-dark">80 €<span class="font-body text-sm text-gray-text">/an</span></div>
+                </div>
+                <div class="bg-purple-pale rounded-xl px-4 py-3">
+                  <div class="font-body font-bold text-xs uppercase tracking-widest text-gray-text mb-1">Raquettes</div>
+                  <div class="font-display text-2xl text-purple-dark">95 €<span class="font-body text-sm text-gray-text">/an</span></div>
+                </div>
+                <div class="bg-purple-pale rounded-xl px-4 py-3">
+                  <div class="font-body font-bold text-xs uppercase tracking-widest text-gray-text mb-1">Multi-Balls</div>
+                  <div class="font-display text-2xl text-purple-dark">85 €<span class="font-body text-sm text-gray-text">/an</span></div>
+                </div>
+              </div>
+              <p class="font-body text-xs text-gray-text mt-3">Paiement accepté par chèque, virement bancaire ou espèces. Possibilité de paiement en plusieurs fois, renseignez-vous auprès du secrétariat.</p>
+            </div>
+          </div>
+
+          <!-- Étape 4 -->
+          <div class="bg-white rounded-xl p-6 flex gap-6 items-start">
+            <div class="flex-shrink-0 w-12 h-12 bg-yellow rounded-xl flex items-center justify-center">
+              <span class="font-display text-2xl text-black">4</span>
+            </div>
+            <div>
+              <h3 class="font-display text-2xl text-purple-dark mb-2">Confirmation et début des cours</h3>
+              <p class="font-body text-sm text-gray-text leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Une fois votre dossier complet et la cotisation réglée, votre inscription est validée. Vous recevrez une confirmation par email avec le planning définitif et toutes les informations pratiques pour démarrer l'activité.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INFORMATIONS COMPLÉMENTAIRES -->
+    <section class="px-4 py-10">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-display text-4xl text-purple-dark mb-8">Informations pratiques</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          <div class="bg-purple rounded-xl p-6">
+            <h3 class="font-display text-xl text-yellow mb-3">Calendrier des inscriptions</h3>
+            <div class="space-y-3">
+              <div>
+                <div class="font-body font-bold text-xs uppercase tracking-widest text-white/60 mb-1">Ouverture des inscriptions</div>
+                <div class="font-body text-sm text-white">15 juin 2026</div>
+              </div>
+              <div>
+                <div class="font-body font-bold text-xs uppercase tracking-widest text-white/60 mb-1">Rentrée des activités</div>
+                <div class="font-body text-sm text-white">7 septembre 2026</div>
+              </div>
+              <div>
+                <div class="font-body font-bold text-xs uppercase tracking-widest text-white/60 mb-1">Fin de l'année sportive</div>
+                <div class="font-body text-sm text-white">30 juin 2027</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl p-6">
+            <h3 class="font-display text-xl text-purple-dark mb-3">Horaires du secrétariat</h3>
+            <div class="space-y-2">
+              <div class="flex justify-between font-body text-sm">
+                <span class="text-gray-text">Lundi – Mercredi</span>
+                <span class="font-bold text-purple-dark">09h00 – 12h00</span>
+              </div>
+              <div class="flex justify-between font-body text-sm">
+                <span class="text-gray-text">Jeudi</span>
+                <span class="font-bold text-purple-dark">14h00 – 18h00</span>
+              </div>
+              <div class="flex justify-between font-body text-sm">
+                <span class="text-gray-text">Vendredi</span>
+                <span class="font-bold text-purple-dark">09h00 – 12h00</span>
+              </div>
+              <div class="flex justify-between font-body text-sm">
+                <span class="text-gray-text">Samedi – Dimanche</span>
+                <span class="text-gray-text">Fermé</span>
+              </div>
+            </div>
+            <div class="border-t border-black/5 mt-4 pt-4 space-y-1">
+              <div class="font-body text-sm text-gray-text">contact@assg.fr</div>
+              <div class="font-body text-sm text-gray-text">01 XX XX XX XX</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-purple-dark py-10 px-6 mt-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <div class="font-display text-2xl text-white mb-1">A.S.S.G</div>
+          <div class="font-body text-white/70 text-sm">Association Sportive St-Genevière</div>
+          <p class="font-body text-white/50 text-sm mt-3 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div>
+          <div class="font-display text-lg text-white mb-4">Liens rapides</div>
+          <ul class="space-y-2">
+            <li><a href="/index.html" class="font-body text-white/70 text-sm hover:text-yellow transition-colors">Accueil</a></li>
+            <li><a href="/club.html" class="font-body text-white/70 text-sm hover:text-yellow transition-colors">Le club</a></li>
+            <li><a href="/activites.html" class="font-body text-white/70 text-sm hover:text-yellow transition-colors">Activités</a></li>
+            <li><a href="/actualites.html" class="font-body text-white/70 text-sm hover:text-yellow transition-colors">Actualités</a></li>
+            <li><a href="/inscription.html" class="font-body text-white/70 text-sm hover:text-yellow transition-colors">Inscription</a></li>
+            <li><a href="/contact.html" class="font-body text-white/70 text-sm hover:text-yellow transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-display text-lg text-white mb-4">Contact</div>
+          <div class="font-body text-white/70 text-sm space-y-2">
+            <p>contact@assg.fr</p>
+            <p>01 XX XX XX XX</p>
+            <p>12 rue de la République, 75000 Paris</p>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6">
+        <p class="font-body text-white/50 text-xs text-center">© 2026 A.S.S.G — Association Sportive St-Genevière. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

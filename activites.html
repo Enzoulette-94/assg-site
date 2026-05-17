@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activités — A.S.S.G</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            purple:         '#7B4FD4',
+            'purple-light': '#A87CE8',
+            'purple-dark':  '#4A2A8A',
+            'purple-pale':  '#EDE8FA',
+            yellow:         '#FFE533',
+            'yellow-dark':  '#bba800',
+            pink:           '#E87BB5',
+            'pink-pale':    '#FBEAF0',
+            'pink-dark':    '#72243E',
+            'gray-bg':      '#F5F4FA',
+            'gray-text':    '#6b6880',
+          },
+          fontFamily: {
+            display: ['Boogaloo', 'cursive'],
+            body:    ['Nunito', 'sans-serif'],
+          },
+          borderRadius: {
+            DEFAULT: '12px',
+            sm:      '8px',
+            pill:    '30px',
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/custom.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-pink-pale font-body">
+
+  <!-- HEADER -->
+  <header class="px-4 pt-4 pb-2">
+    <nav x-data="{ open: false }" class="bg-purple rounded-xl px-6 py-4 flex items-center justify-between relative">
+      <a href="/index.html" class="flex items-center gap-2 flex-shrink-0">
+        <span class="font-display text-3xl text-white">A.S.S.G</span>
+        <span class="font-display text-xl text-yellow hidden sm:inline">· St-Genevière</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="/index.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow">Accueil</a>
+        <a href="/club.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow">Le club</a>
+        <a href="/activites.html" class="font-body font-bold text-sm text-white hover:text-yellow underline decoration-yellow">Activités</a>
+        <a href="/actualites.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow">Actualités</a>
+        <a href="/inscription.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow">Inscription</a>
+        <a href="/contact.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button @click="open = !open" class="md:hidden text-white bg-white/20 rounded-lg px-3 py-2 font-body font-bold text-xs">Menu</button>
+      </div>
+      <div x-show="open" x-transition class="absolute top-full left-0 right-0 bg-purple-dark rounded-xl mt-2 p-5 md:hidden z-50 shadow-xl">
+        <div class="flex flex-col gap-3">
+          <a href="/index.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow py-1">Accueil</a>
+          <a href="/club.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow py-1">Le club</a>
+          <a href="/activites.html" class="font-body font-bold text-sm text-white py-1 underline decoration-yellow">Activités</a>
+          <a href="/actualites.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow py-1">Actualités</a>
+          <a href="/inscription.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow py-1">Inscription</a>
+          <a href="/contact.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow py-1">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="px-4 py-6">
+      <div class="relative bg-purple rounded-xl px-8 py-16 overflow-hidden max-w-6xl mx-auto">
+        <div class="absolute -top-12 -right-12 w-64 h-64 bg-white/5 rounded-full"></div>
+        <div class="absolute -bottom-16 left-1/3 w-56 h-56 bg-yellow/10 rounded-full"></div>
+        <div class="relative z-10 text-center">
+          <h1 class="font-display text-5xl text-white mb-4">Nos activités</h1>
+          <p class="font-body text-base text-white/75 max-w-xl mx-auto leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Découvrez l'ensemble de nos activités sportives adaptées à chaque âge et chaque niveau.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BABY GYM -->
+    <section class="px-4 py-10">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="bg-purple-pale rounded-xl h-64 md:h-80"></div>
+        <div>
+          <span class="inline-block bg-purple-pale text-purple-dark text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Tout-petits</span>
+          <h2 class="font-display text-4xl text-purple-dark mb-2">Baby Gym</h2>
+          <div class="font-body text-sm text-gray-text font-bold mb-4">Dès 18 mois</div>
+          <p class="font-body text-sm text-gray-text mb-3 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p class="font-body text-sm text-gray-text mb-3 leading-relaxed">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+          <p class="font-body text-sm text-gray-text leading-relaxed">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- JEUX TRADI -->
+    <section class="px-4 py-10 bg-white/60 rounded-xl mx-4">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="order-2 md:order-1">
+          <span class="inline-block bg-yellow/30 text-yellow-dark text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Tradition</span>
+          <h2 class="font-display text-4xl text-purple-dark mb-2">Jeux Tradi</h2>
+          <div class="font-body text-sm text-gray-text font-bold mb-4">Dès 4 ans</div>
+          <p class="font-body text-sm text-gray-text mb-3 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p class="font-body text-sm text-gray-text mb-3 leading-relaxed">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+          <p class="font-body text-sm text-gray-text leading-relaxed">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint.</p>
+        </div>
+        <div class="bg-yellow/20 rounded-xl h-64 md:h-80 order-1 md:order-2"></div>
+      </div>
+    </section>
+
+    <!-- RAQUETTES -->
+    <section class="px-4 py-10">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="bg-pink-pale rounded-xl h-64 md:h-80"></div>
+        <div>
+          <span class="inline-block bg-pink-pale text-pink-dark text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Sport</span>
+          <h2 class="font-display text-4xl text-purple-dark mb-2">Raquettes</h2>
+          <div class="font-body text-sm text-gray-text font-bold mb-4">Dès 6 ans</div>
+          <p class="font-body text-sm text-gray-text mb-3 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p class="font-body text-sm text-gray-text mb-3 leading-relaxed">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto.</p>
+          <p class="font-body text-sm text-gray-text leading-relaxed">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MULTI-BALLS -->
+    <section class="px-4 py-10">
+      <div class="max-w-6xl mx-auto bg-purple rounded-xl overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+          <div class="p-8 md:p-12">
+            <span class="inline-block bg-white/15 text-white/90 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">Jonglage</span>
+            <h2 class="font-display text-4xl text-yellow mb-2">Multi-Balls</h2>
+            <div class="font-body text-sm text-white/70 font-bold mb-4">Dès 8 ans</div>
+            <p class="font-body text-sm text-white/75 mb-3 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            <p class="font-body text-sm text-white/75 mb-3 leading-relaxed">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
+            <p class="font-body text-sm text-white/75 leading-relaxed">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
+          </div>
+          <div class="bg-purple-dark/50 h-64 md:h-full min-h-64"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANNING -->
+    <section class="px-4 py-10">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="font-display text-4xl text-purple-dark mb-8">Planning de la semaine</h2>
+        <div class="bg-white rounded-xl overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-purple text-white">
+                <tr>
+                  <th class="font-display text-left px-5 py-4 text-lg">Jour</th>
+                  <th class="font-display text-left px-5 py-4 text-lg">Activité</th>
+                  <th class="font-display text-left px-5 py-4 text-lg">Horaire</th>
+                  <th class="font-display text-left px-5 py-4 text-lg">Lieu</th>
+                  <th class="font-display text-left px-5 py-4 text-lg">Public</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="bg-purple-pale">
+                  <td class="font-body font-bold text-sm text-purple-dark px-5 py-4">Lundi</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Baby Gym</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">09h30 – 10h30</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Salle A</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">18 mois – 3 ans</td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="font-body font-bold text-sm text-purple-dark px-5 py-4">Lundi</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Multi-Balls</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">17h00 – 18h30</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Gymnase B</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Dès 8 ans</td>
+                </tr>
+                <tr class="bg-purple-pale">
+                  <td class="font-body font-bold text-sm text-purple-dark px-5 py-4">Mardi</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Jeux Tradi</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">14h00 – 15h30</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Salle C</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Dès 4 ans</td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="font-body font-bold text-sm text-purple-dark px-5 py-4">Mercredi</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Baby Gym</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">10h00 – 11h00</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Salle A</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">3 – 6 ans</td>
+                </tr>
+                <tr class="bg-purple-pale">
+                  <td class="font-body font-bold text-sm text-purple-dark px-5 py-4">Mercredi</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Raquettes</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">14h00 – 16h00</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Terrain ext.</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Dès 6 ans</td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="font-body font-bold text-sm text-purple-dark px-5 py-4">Jeudi</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Multi-Balls</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">16h30 – 18h00</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Gymnase B</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Adolescents</td>
+                </tr>
+                <tr class="bg-purple-pale">
+                  <td class="font-body font-bold text-sm text-purple-dark px-5 py-4">Vendredi</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Raquettes</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">09h00 – 11h00</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Terrain ext.</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Adultes</td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="font-body font-bold text-sm text-purple-dark px-5 py-4">Vendredi</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Jeux Tradi</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">16h00 – 17h30</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Salle C</td>
+                  <td class="font-body text-sm text-gray-text px-5 py-4">Tous niveaux</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p class="font-body text-xs text-gray-text mt-4">Planning donné à titre indicatif — susceptible d'être modifié. Contactez-nous pour toute question.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-purple-dark py-10 px-6 mt-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <div class="font-display text-2xl text-white mb-1">A.S.S.G</div>
+          <div class="font-body text-white/70 text-sm">Association Sportive St-Genevière</div>
+          <p class="font-body text-white/50 text-sm mt-3 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div>
+          <div class="font-display text-lg text-white mb-4">Liens rapides</div>
+          <ul class="space-y-2">
+            <li><a href="/index.html" class="font-body text-white/70 text-sm hover:text-yellow transition-colors">Accueil</a></li>
+            <li><a href="/club.html" class="font-body text-white/70 text-sm hover:text-yellow transition-colors">Le club</a></li>
+            <li><a href="/activites.html" class="font-body text-white/70 text-sm hover:text-yellow transition-colors">Activités</a></li>
+            <li><a href="/actualites.html" class="font-body text-white/70 text-sm hover:text-yellow transition-colors">Actualités</a></li>
+            <li><a href="/inscription.html" class="font-body text-white/70 text-sm hover:text-yellow transition-colors">Inscription</a></li>
+            <li><a href="/contact.html" class="font-body text-white/70 text-sm hover:text-yellow transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-display text-lg text-white mb-4">Contact</div>
+          <div class="font-body text-white/70 text-sm space-y-2">
+            <p>contact@assg.fr</p>
+            <p>01 XX XX XX XX</p>
+            <p>12 rue de la République, 75000 Paris</p>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6">
+        <p class="font-body text-white/50 text-xs text-center">© 2026 A.S.S.G — Association Sportive St-Genevière. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

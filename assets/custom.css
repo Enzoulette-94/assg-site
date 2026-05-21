@@ -11,3 +11,178 @@
 
 /* Transition boutons */
 .btn-transition { transition: transform 0.1s, box-shadow 0.1s; }
+
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    url('basketball.svg'),
+    url('racket.svg'),
+    url('soccer.svg'),
+    url('tennis.svg'),
+    url('tennis.svg'),
+    url('racket.svg'),
+    url('soccer.svg'),
+    url('basketball.svg');
+  background-size:
+    290px 290px,
+    155px 232px,
+    275px 275px,
+    260px 260px,
+    200px 200px,
+    120px 180px,
+    210px 210px,
+    185px 185px;
+  background-repeat: no-repeat;
+  background-position:
+    0%   0%,
+    100% 0%,
+    0%   100%,
+    100% 100%,
+    68%  15%,
+    5%   50%,
+    88%  58%,
+    38%  88%;
+}
+
+header,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Bulles bénéfices : composition constante, tailles proportionnelles pour éviter les chevauchements. */
+.benefits-bubbles {
+  min-height: clamp(470px, 60vw, 650px);
+}
+
+.benefit-bubble {
+  position: absolute;
+  width: clamp(92px, 19vw, 240px);
+  max-width: none;
+  transform: translate(-50%, -50%);
+}
+
+.benefit-bubble h3 {
+  font-size: clamp(1rem, 2.2vw, 1.875rem);
+  line-height: 1;
+}
+
+.benefit-bubble p {
+  font-size: clamp(0.58rem, 1.15vw, 0.875rem);
+  line-height: 1.35;
+}
+
+.benefit-bubble-center {
+  left: 50%;
+  top: 42%;
+  width: clamp(116px, 23vw, 270px);
+}
+
+.benefit-bubble-center span {
+  font-size: clamp(0.52rem, 1.25vw, 1rem);
+  line-height: 1.25;
+}
+
+.benefit-bubble-center h3 {
+  font-size: clamp(1.45rem, 4vw, 3rem);
+}
+
+.benefit-bubble-team {
+  left: 19%;
+  top: 22%;
+}
+
+.benefit-bubble-motor {
+  left: 78%;
+  top: 22%;
+  width: clamp(104px, 21vw, 240px);
+}
+
+.benefit-bubble-confidence {
+  left: 20%;
+  top: 73%;
+  width: clamp(104px, 21vw, 240px);
+}
+
+.benefit-bubble-respect {
+  left: 79%;
+  top: 73%;
+}
+
+.benefit-bubble-fun {
+  left: 50%;
+  top: 84%;
+  width: clamp(96px, 19vw, 224px);
+}
+
+@media (max-width: 767px) {
+  .benefits-bubbles {
+    min-height: 470px;
+  }
+
+  .benefit-bubble {
+    width: 94px !important;
+    padding: 10px;
+  }
+
+  .benefit-bubble h3 {
+    font-size: 1rem;
+  }
+
+  .benefit-bubble p {
+    font-size: 0.58rem;
+  }
+
+  .benefit-bubble-center {
+    left: 50%;
+    top: 43%;
+    width: 118px !important;
+  }
+
+  .benefit-bubble-center span {
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
+  }
+
+  .benefit-bubble-center h3 {
+    font-size: 1.45rem;
+  }
+
+  .benefit-bubble-team {
+    left: 24%;
+    top: 24%;
+  }
+
+  .benefit-bubble-motor {
+    left: 76%;
+    top: 24%;
+    width: 98px !important;
+  }
+
+  .benefit-bubble-confidence {
+    left: 24%;
+    top: 75%;
+    width: 98px !important;
+  }
+
+  .benefit-bubble-respect {
+    left: 76%;
+    top: 75%;
+  }
+
+  .benefit-bubble-fun {
+    left: 50%;
+    top: 86%;
+    width: 100px !important;
+  }
+}

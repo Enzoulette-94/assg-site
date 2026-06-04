@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A.S.S.G — UI Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #7B4FD4;
+    --purple-light: #A87CE8;
+    --purple-dark: #4A2A8A;
+    --purple-pale: #EDE8FA;
+    --yellow: #FFE533;
+    --yellow-dark: #bba800;
+    --pink: #E87BB5;
+    --pink-pale: #FBEAF0;
+    --pink-dark: #72243E;
+    --black: #111;
+    --white: #fff;
+    --gray-bg: #F5F4FA;
+    --gray-text: #6b6880;
+    --border: rgba(0,0,0,0.09);
+    --font-display: 'Boogaloo', cursive;
+    --font-body: 'Nunito', sans-serif;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-pill: 30px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--gray-bg);
+    color: var(--black);
+    min-height: 100vh;
+  }
+
+  /* ── PAGE LAYOUT ── */
+  .page { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  /* ── KIT HEADER ── */
+  .kit-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 48px; padding-bottom: 24px;
+    border-bottom: 2px solid var(--border);
+  }
+  .kit-header-logo { font-family: var(--font-display); font-size: 32px; color: var(--purple); }
+  .kit-header-logo span { color: var(--yellow-dark); }
+  .kit-meta { font-size: 13px; color: var(--gray-text); }
+  .kit-meta strong { color: var(--purple-dark); }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 56px; }
+  .section-label {
+    font-family: var(--font-body);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gray-text);
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── COLORS ── */
+  .color-grid { display: flex; gap: 12px; flex-wrap: wrap; }
+  .color-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .swatch {
+    width: 80px; height: 80px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(0,0,0,0.07);
+  }
+  .swatch-name { font-size: 12px; font-weight: 700; color: var(--black); text-align: center; }
+  .swatch-hex { font-size: 11px; color: var(--gray-text); font-family: monospace; }
+
+  /* ── TYPOGRAPHY ── */
+  .typo-row { margin-bottom: 18px; display: flex; align-items: baseline; gap: 20px; }
+  .typo-meta { font-size: 11px; color: var(--gray-text); min-width: 130px; font-family: monospace; }
+  .t-display-xl { font-family: var(--font-display); font-size: 52px; color: var(--purple); line-height: 1; }
+  .t-display-lg { font-family: var(--font-display); font-size: 36px; color: var(--purple-dark); line-height: 1.1; }
+  .t-display-md { font-family: var(--font-display); font-size: 24px; color: var(--purple-dark); }
+  .t-body { font-family: var(--font-body); font-size: 16px; color: var(--black); line-height: 1.6; }
+  .t-label { font-family: var(--font-body); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); }
+  .t-tag {
+    font-family: var(--font-display); font-size: 20px;
+    background: var(--yellow); color: var(--black);
+    display: inline-block; padding: 2px 14px; border-radius: 6px;
+  }
+
+  /* ── BUTTONS ── */
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .btn {
+    font-family: var(--font-display); font-size: 20px;
+    border: none; cursor: pointer; border-radius: var(--radius);
+    padding: 10px 28px; transition: transform 0.1s, box-shadow 0.1s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-primary { background: var(--purple); color: var(--white); box-shadow: 4px 4px 0 var(--purple-dark); }
+  .btn-primary:hover { box-shadow: 2px 2px 0 var(--purple-dark); transform: translate(2px,2px); }
+  .btn-secondary { background: var(--yellow); color: var(--black); box-shadow: 4px 4px 0 var(--yellow-dark); }
+  .btn-secondary:hover { box-shadow: 2px 2px 0 var(--yellow-dark); transform: translate(2px,2px); }
+  .btn-outline { background: transparent; color: var(--purple); border: 2.5px solid var(--purple); box-shadow: none; }
+  .btn-outline:hover { background: var(--purple); color: var(--white); }
+  .btn-pink { background: var(--pink); color: var(--white); box-shadow: 4px 4px 0 #a84080; }
+  .btn-pink:hover { box-shadow: 2px 2px 0 #a84080; transform: translate(2px,2px); }
+  .btn-sm { font-size: 15px; padding: 6px 18px; }
+
+  /* ── BADGES ── */
+  .badge-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .badge {
+    font-family: var(--font-display); font-size: 17px;
+    padding: 4px 16px; border-radius: var(--radius-pill);
+  }
+  .badge-purple { background: var(--purple); color: var(--white); }
+  .badge-yellow { background: var(--yellow); color: #6b5200; }
+  .badge-pink { background: var(--pink); color: var(--white); }
+  .badge-outline { border: 2px solid var(--purple); color: var(--purple); background: transparent; }
+  .badge-pale { background: var(--purple-pale); color: var(--purple-dark); }
+
+  /* ── ACTIVITY CARDS ── */
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+  .act-card {
+    background: var(--white);
+    border-radius: 0 0 var(--radius) var(--radius);
+    border: 1px solid var(--border);
+    padding: 1.25rem 1rem;
+  }
+  .act-card-dark { background: var(--purple); border: none; border-radius: var(--radius); }
+  .act-card-tag {
+    display: inline-block; font-family: var(--font-body);
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding: 3px 10px; border-radius: var(--radius-pill);
+    margin-bottom: 10px;
+  }
+  .tag-purple { background: var(--purple-pale); color: var(--purple-dark); }
+  .tag-yellow { background: var(--yellow); color: #6b5200; }
+  .tag-pink { background: var(--pink-pale); color: var(--pink-dark); }
+  .tag-white { background: rgba(255,255,255,0.18); color: rgba(255,255,255,0.9); }
+  .act-card-title { font-family: var(--font-display); font-size: 22px; margin-bottom: 6px; line-height: 1.15; }
+  .act-card-title-dark { color: var(--yellow); }
+  .act-card-title-light { color: var(--purple-dark); }
+  .act-card-desc { font-size: 13px; line-height: 1.5; }
+  .act-card-desc-light { color: var(--gray-text); }
+  .act-card-desc-dark { color: rgba(255,255,255,0.75); }
+
+  /* ── NAV ── */
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--purple); border-radius: var(--radius);
+    padding: 14px 22px;
+  }
+  .nav-logo { font-family: var(--font-display); font-size: 26px; color: var(--white); }
+  .nav-logo em { color: var(--yellow); font-style: normal; }
+  .nav-links { display: flex; gap: 20px; }
+  .nav-link {
+    font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.78);
+    text-decoration: none; cursor: pointer; transition: color 0.15s;
+  }
+  .nav-link:hover { color: var(--yellow); }
+  .nav-cta {
+    font-family: var(--font-display); font-size: 17px;
+    background: var(--yellow); color: var(--black);
+    border: none; border-radius: var(--radius-sm); padding: 6px 18px; cursor: pointer;
+    transition: transform 0.1s;
+  }
+  .nav-cta:hover { transform: scale(1.04); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--purple); border-radius: var(--radius);
+    padding: 2.5rem 2rem; position: relative; overflow: hidden;
+  }
+  .hero-circle1 {
+    position: absolute; right: -30px; top: -30px;
+    width: 180px; height: 180px; border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .hero-circle2 {
+    position: absolute; right: 40px; bottom: -40px;
+    width: 120px; height: 120px; border-radius: 50%;
+    background: rgba(255,229,51,0.1);
+  }
+  .hero-badge {
+    font-family: var(--font-display); font-size: 15px;
+    background: var(--yellow); color: var(--black);
+    display: inline-block; padding: 4px 14px; border-radius: 6px;
+    margin-bottom: 14px; position: relative; z-index: 1;
+  }
+  .hero-title {
+    font-family: var(--font-display); font-size: 44px; color: var(--white);
+    line-height: 1.05; margin-bottom: 12px;
+    position: relative; z-index: 1;
+  }
+  .hero-sub {
+    font-size: 15px; color: rgba(255,255,255,0.75);
+    max-width: 380px; margin-bottom: 20px;
+    position: relative; z-index: 1;
+  }
+
+  /* ── FORM ── */
+  .form-card {
+    background: var(--white); border-radius: var(--radius);
+    border: 1px solid var(--border); padding: 1.75rem; max-width: 440px;
+  }
+  .form-title { font-family: var(--font-display); font-size: 26px; color: var(--purple-dark); margin-bottom: 18px; }
+  .form-field { margin-bottom: 14px; }
+  .form-label {
+    display: block; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--gray-text); margin-bottom: 6px;
+  }
+  .form-input {
+    width: 100%; border: 2px solid rgba(0,0,0,0.1);
+    border-radius: 10px; padding: 10px 14px;
+    font-family: var(--font-body); font-size: 15px;
+    color: var(--black); background: var(--white);
+    outline: none; transition: border-color 0.15s;
+  }
+  .form-input:focus { border-color: var(--purple); }
+  .form-submit {
+    width: 100%; font-family: var(--font-display); font-size: 20px;
+    background: var(--purple); color: var(--white);
+    border: none; border-radius: var(--radius);
+    padding: 12px; cursor: pointer;
+    box-shadow: 4px 4px 0 var(--purple-dark);
+    transition: transform 0.1s, box-shadow 0.1s;
+    margin-top: 6px;
+  }
+  .form-submit:hover { transform: translate(2px,2px); box-shadow: 2px 2px 0 var(--purple-dark); }
+
+  /* ── PILLS ── */
+  .pills-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--purple-pale); border-radius: var(--radius-pill);
+    padding: 8px 18px;
+    font-family: var(--font-display); font-size: 18px;
+    color: var(--purple-dark);
+  }
+
+  /* ── DIVIDER ── */
+  hr.kit-divider { border: none; border-top: 1px dashed var(--border); margin: 0 0 20px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header du kit -->
+  <div class="kit-header">
+    <div>
+      <div class="kit-header-logo">A.S.S.G <span>·</span> UI Kit</div>
+      <div class="kit-meta">Association Sportive St-Genevière — <strong>Rentrée 2026</strong></div>
+    </div>
+    <div class="kit-meta" style="text-align:right;">
+      Boogaloo + Nunito<br>
+      Violet · Jaune · Rose
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="section">
+    <div class="section-label">Navigation</div>
+    <nav class="nav">
+      <div class="nav-logo">A.S.S.G <em>·</em> St-Geneviève</div>
+      <div class="nav-links">
+        <a class="nav-link">Activités</a>
+        <a class="nav-link">Inscriptions</a>
+        <a class="nav-link">Contact</a>
+      </div>
+      <button class="nav-cta">S'inscrire</button>
+    </nav>
+  </div>
+
+  <!-- COULEURS -->
+  <div class="section">
+    <div class="section-label">Palette de couleurs</div>
+    <div class="color-grid">
+      <div class="color-item">
+        <div class="swatch" style="background:#7B4FD4;"></div>
+        <div class="swatch-name">Violet principal</div>
+        <div class="swatch-hex">#7B4FD4</div>
+      </div>
+      <div class="color-item">
+        <div class="swatch" style="background:#A87CE8;"></div>
+        <div class="swatch-name">Violet clair</div>
+        <div class="swatch-hex">#A87CE8</div>
+      </div>
+      <div class="color-item">
+        <div class="swatch" style="background:#4A2A8A;"></div>
+        <div class="swatch-name">Violet sombre</div>
+        <div class="swatch-hex">#4A2A8A</div>
+      </div>
+      <div class="color-item">
+        <div class="swatch" style="background:#EDE8FA; border:1px solid #ccc;"></div>
+        <div class="swatch-name">Violet pâle</div>
+        <div class="swatch-hex">#EDE8FA</div>
+      </div>
+      <div class="color-item">
+        <div class="swatch" style="background:#FFE533; border:1px solid #ccc;"></div>
+        <div class="swatch-name">Jaune accent</div>
+        <div class="swatch-hex">#FFE533</div>
+      </div>
+      <div class="color-item">
+        <div class="swatch" style="background:#E87BB5;"></div>
+        <div class="swatch-name">Rose accent</div>
+        <div class="swatch-hex">#E87BB5</div>
+      </div>
+      <div class="color-item">
+        <div class="swatch" style="background:#FBEAF0; border:1px solid #ccc;"></div>
+        <div class="swatch-name">Rose pâle</div>
+        <div class="swatch-hex">#FBEAF0</div>
+      </div>
+      <div class="color-item">
+        <div class="swatch" style="background:#111;"></div>
+        <div class="swatch-name">Noir</div>
+        <div class="swatch-hex">#111111</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPOGRAPHIE -->
+  <div class="section">
+    <div class="section-label">Typographie</div>
+    <div class="typo-row">
+      <div class="typo-meta">Boogaloo / 52px</div>
+      <div class="t-display-xl">Baby Gym · A.S.S.G</div>
+    </div>
+    <div class="typo-row">
+      <div class="typo-meta">Boogaloo / 36px</div>
+      <div class="t-display-lg">Jeux Tradi · Raquettes</div>
+    </div>
+    <div class="typo-row">
+      <div class="typo-meta">Boogaloo / 24px</div>
+      <div class="t-display-md">Multi-Balls · Rentrée 2026</div>
+    </div>
+    <div class="typo-row">
+      <div class="typo-meta">Nunito / 16px</div>
+      <div class="t-body">Corps de texte pour descriptions et informations pratiques.</div>
+    </div>
+    <div class="typo-row">
+      <div class="typo-meta">Nunito 700 / 12px</div>
+      <div class="t-label">Label section · uppercase</div>
+    </div>
+    <div class="typo-row">
+      <div class="typo-meta">Boogaloo tag</div>
+      <div class="t-tag">Rentrée 2026</div>
+    </div>
+  </div>
+
+  <!-- BOUTONS -->
+  <div class="section">
+    <div class="section-label">Boutons</div>
+    <div class="btn-row">
+      <button class="btn btn-primary">S'inscrire</button>
+      <button class="btn btn-secondary">Programme</button>
+      <button class="btn btn-outline">En savoir plus</button>
+      <button class="btn btn-pink">Contact</button>
+    </div>
+    <div class="btn-row" style="margin-top:14px;">
+      <button class="btn btn-primary btn-sm">S'inscrire</button>
+      <button class="btn btn-secondary btn-sm">Programme</button>
+      <button class="btn btn-outline btn-sm">En savoir plus</button>
+    </div>
+  </div>
+
+  <!-- BADGES -->
+  <div class="section">
+    <div class="section-label">Badges & étiquettes</div>
+    <div class="badge-row">
+      <span class="badge badge-purple">Baby Gym</span>
+      <span class="badge badge-yellow">Jeux Tradi</span>
+      <span class="badge badge-pink">Multi-Balls</span>
+      <span class="badge badge-outline">Raquettes</span>
+      <span class="badge badge-pale">Rentrée 2026</span>
+    </div>
+  </div>
+
+  <!-- PILLS -->
+  <div class="section">
+    <div class="section-label">Pills d'activités</div>
+    <div class="pills-row">
+      <span class="pill">Baby Gym</span>
+      <span class="pill">Jeux Tradi</span>
+      <span class="pill">Raquettes</span>
+      <span class="pill">Multi-Balls</span>
+    </div>
+  </div>
+
+  <!-- CARTES ACTIVITÉS -->
+  <div class="section">
+    <div class="section-label">Cartes d'activités</div>
+    <div class="cards-grid">
+      <div class="act-card" style="border-top: 4px solid #7B4FD4;">
+        <span class="act-card-tag tag-purple">Tout-petits</span>
+        <div class="act-card-title act-card-title-light">Baby Gym</div>
+        <div class="act-card-desc act-card-desc-light">Éveil corporel et motricité pour les tout-petits.</div>
+      </div>
+      <div class="act-card" style="border-top: 4px solid #FFE533;">
+        <span class="act-card-tag tag-yellow">Collectif</span>
+        <div class="act-card-title act-card-title-light">Jeux Tradi</div>
+        <div class="act-card-desc act-card-desc-light">Jeux traditionnels collectifs et coopératifs.</div>
+      </div>
+      <div class="act-card" style="border-top: 4px solid #E87BB5;">
+        <span class="act-card-tag tag-pink">Coordination</span>
+        <div class="act-card-title act-card-title-light">Raquettes</div>
+        <div class="act-card-desc act-card-desc-light">Badminton, tennis de table, initiations variées.</div>
+      </div>
+      <div class="act-card act-card-dark">
+        <span class="act-card-tag tag-white">Jonglage</span>
+        <div class="act-card-title act-card-title-dark">Multi-Balls</div>
+        <div class="act-card-desc act-card-desc-dark">Dribble, coordination et jeux de balle en main.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO BANNER -->
+  <div class="section">
+    <div class="section-label">Bannière héro</div>
+    <div class="hero">
+      <div class="hero-circle1"></div>
+      <div class="hero-circle2"></div>
+      <div class="hero-badge">Rentrée 2026</div>
+      <div class="hero-title">Association Sportive<br>St-Genevière</div>
+      <div class="hero-sub">Baby Gym · Jeux Tradi · Raquettes · Multi-Balls. Inscriptions ouvertes pour la rentrée.</div>
+      <button class="btn btn-secondary" style="font-size:18px; padding:9px 24px;">S'inscrire maintenant</button>
+    </div>
+  </div>
+
+  <!-- FORMULAIRE -->
+  <div class="section">
+    <div class="section-label">Formulaire d'inscription</div>
+    <div class="form-card">
+      <div class="form-title">Inscription rentrée 2026</div>
+      <div class="form-field">
+        <label class="form-label">Nom de l'enfant</label>
+        <input class="form-input" type="text" placeholder="Prénom Nom">
+      </div>
+      <div class="form-field">
+        <label class="form-label">Activité souhaitée</label>
+        <select class="form-input">
+          <option>Baby Gym</option>
+          <option>Jeux Tradi</option>
+          <option>Raquettes</option>
+          <option>Multi-Balls</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Email contact</label>
+        <input class="form-input" type="email" placeholder="parent@exemple.fr">
+      </div>
+      <button class="form-submit">Envoyer ma demande</button>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

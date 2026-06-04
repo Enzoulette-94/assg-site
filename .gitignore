@@ -1,0 +1,5 @@
+.claude/
+.agents/
+.DS_Store
+skills-lock.json
+assg_ui_kit.html

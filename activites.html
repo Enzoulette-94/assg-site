@@ -57,7 +57,7 @@
         <a href="/contact.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow">Contact</a>
       </div>
       <div class="flex items-center gap-3">
-        <button @click="open = !open" class="md:hidden text-white bg-white/20 rounded-lg px-3 py-2 font-body font-bold text-xs">Menu</button>
+        <button @click="open = !open" class="md:hidden text-white bg-white/20 rounded-lg px-4 py-3 font-body font-bold text-xs min-h-[44px]">Menu</button>
       </div>
       <div x-show="open" x-transition class="absolute top-full left-0 right-0 bg-purple-dark rounded-xl mt-2 p-5 md:hidden z-50 shadow-xl">
         <div class="flex flex-col gap-3">
@@ -76,11 +76,11 @@
 
     <!-- HERO -->
     <section class="px-4 py-6">
-      <div class="relative bg-purple rounded-xl px-8 py-16 overflow-hidden max-w-6xl mx-auto">
+      <div class="relative bg-purple rounded-xl px-4 sm:px-8 py-12 sm:py-16 overflow-hidden max-w-6xl mx-auto">
         <div class="absolute -top-12 -right-12 w-64 h-64 bg-white/5 rounded-full"></div>
         <div class="absolute -bottom-16 left-1/3 w-56 h-56 bg-yellow/10 rounded-full"></div>
         <div class="relative z-10 text-center">
-          <h1 class="font-display text-5xl text-yellow">Nos activités</h1>
+          <h1 class="font-display text-4xl sm:text-5xl text-yellow">Nos activités</h1>
         </div>
       </div>
     </section>
@@ -137,6 +137,19 @@
           </div>
           <div class="bg-purple-dark/50 h-64 md:h-full min-h-64"></div>
         </div>
+      </div>
+    </section>
+
+    <!-- JUDO -->
+    <section class="px-4 py-10 bg-white/60 rounded-xl mx-4">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        <div class="order-2 md:order-1 p-6 md:p-8 flex flex-col justify-center">
+          <h2 class="font-display text-4xl text-purple-dark mb-2">Judo</h2>
+          <p class="font-body text-sm text-gray-text mb-3 leading-relaxed">Une activité encadrée par Xavier Guichard, professeur diplômé et judoka expérimenté fort de plus de 10 ans de pratique et d'enseignement.</p>
+          <p class="font-body text-sm text-gray-text mb-3 leading-relaxed">Les enfants apprendront les bases du judo : chutes, projections et techniques de saisie, tout en intégrant les valeurs fondamentales de la discipline — respect, maîtrise de soi et persévérance.</p>
+          <p class="font-body text-sm text-gray-text leading-relaxed">L'objectif est de développer la motricité, la confiance en soi et l'esprit sportif dans un cadre sécurisé et bienveillant.</p>
+        </div>
+        <div class="bg-purple-pale rounded-xl h-64 md:h-auto min-h-80 order-1 md:order-2"></div>
       </div>
     </section>
 

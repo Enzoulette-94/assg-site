@@ -7,7 +7,9 @@
 /* Border-top colorée des cartes activité */
 .card-top-purple { border-top: 4px solid #7B4FD4; border-radius: 0 0 12px 12px; }
 .card-top-yellow { border-top: 4px solid #FFE533; border-radius: 0 0 12px 12px; }
-.card-top-pink   { border-top: 4px solid #E87BB5; border-radius: 0 0 12px 12px; }
+.card-top-pink        { border-top: 4px solid #E87BB5; border-radius: 0 0 12px 12px; }
+.card-top-purple-dark { border-top: 4px solid #4A2A8A; border-radius: 0 0 12px 12px; }
+.card-top-orange      { border-top: 4px solid #F97316; border-radius: 0 0 12px 12px; }
 
 /* Transition boutons */
 .btn-transition { transition: transform 0.1s, box-shadow 0.1s; }
@@ -125,37 +127,52 @@ footer {
   width: clamp(96px, 19vw, 224px);
 }
 
+@media (max-width: 640px) {
+  body::before {
+    background-size:
+      140px 140px,
+      70px 105px,
+      130px 130px,
+      120px 120px,
+      90px  90px,
+      55px  82px,
+      95px  95px,
+      85px  85px;
+  }
+}
+
 @media (max-width: 767px) {
   .benefits-bubbles {
-    min-height: 470px;
+    min-height: 500px;
   }
 
   .benefit-bubble {
-    width: 94px !important;
+    width: 100px !important;
     padding: 10px;
   }
 
   .benefit-bubble h3 {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 
   .benefit-bubble p {
-    font-size: 0.58rem;
+    font-size: 0.62rem;
+    line-height: 1.3;
   }
 
   .benefit-bubble-center {
     left: 50%;
     top: 43%;
-    width: 118px !important;
+    width: 124px !important;
   }
 
   .benefit-bubble-center span {
-    font-size: 0.52rem;
+    font-size: 0.55rem;
     letter-spacing: 0.08em;
   }
 
   .benefit-bubble-center h3 {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
   }
 
   .benefit-bubble-team {
@@ -166,23 +183,23 @@ footer {
   .benefit-bubble-motor {
     left: 76%;
     top: 24%;
-    width: 98px !important;
+    width: 104px !important;
   }
 
   .benefit-bubble-confidence {
     left: 24%;
-    top: 75%;
-    width: 98px !important;
+    top: 76%;
+    width: 104px !important;
   }
 
   .benefit-bubble-respect {
     left: 76%;
-    top: 75%;
+    top: 76%;
   }
 
   .benefit-bubble-fun {
     left: 50%;
-    top: 86%;
-    width: 100px !important;
+    top: 87%;
+    width: 106px !important;
   }
 }

@@ -57,7 +57,7 @@
         <a href="/contact.html" class="font-body font-bold text-sm text-white/80 hover:text-yellow">Contact</a>
       </div>
       <div class="flex items-center gap-3">
-        <button @click="open = !open" class="md:hidden text-white bg-white/20 rounded-lg px-3 py-2 font-body font-bold text-xs">Menu</button>
+        <button @click="open = !open" class="md:hidden text-white bg-white/20 rounded-lg px-4 py-3 font-body font-bold text-xs min-h-[44px]">Menu</button>
       </div>
       <div x-show="open" x-transition class="absolute top-full left-0 right-0 bg-purple-dark rounded-xl mt-2 p-5 md:hidden z-50 shadow-xl">
         <div class="flex flex-col gap-3">
@@ -77,7 +77,7 @@
     <!-- L'ASSO SPORTIVE -->
     <section class="px-4 py-10">
       <div class="max-w-6xl mx-auto">
-        <h1 class="font-display text-5xl text-purple-dark mb-8">L'asso sportive</h1>
+        <h1 class="font-display text-4xl sm:text-5xl text-purple-dark mb-8">L'asso sportive</h1>
         <p class="font-body text-xl text-gray-text leading-relaxed max-w-4xl">
           L'association sportive A.S.S.G a été créée pour offrir aux enfants un accès simple, ludique et éducatif à la pratique du sport. Elle a pour objectif de favoriser le développement physique, social et personnel des élèves à travers des activités variées, adaptées à chaque âge. Fondée sur des valeurs fortes telles que le plaisir, le respect, le partage et la progression, l'association s'inscrit pleinement dans le projet éducatif de l'école.
         </p>
@@ -88,7 +88,7 @@
     <section class="px-4 py-10">
       <div class="max-w-6xl mx-auto">
         <h2 class="font-display text-4xl text-purple-dark mb-8">Nos valeurs</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
           <div class="bg-white card-top-purple p-6">
             <h3 class="font-display text-2xl text-purple-dark mb-3">Plaisir</h3>
             <p class="font-body text-sm text-gray-text leading-relaxed">Le plaisir de pratiquer le sport.</p>

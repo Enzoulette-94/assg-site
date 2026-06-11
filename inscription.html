@@ -6,37 +6,7 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=2">
   <meta name="description" content="Comment inscrire votre enfant à l'A.S.S.G ? Retrouvez les étapes d'inscription, la fiche à télécharger et le calendrier des inscriptions 2026/2027.">
   <title>Inscription — A.S.S.G</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            purple:         '#7B4FD4',
-            'purple-light': '#A87CE8',
-            'purple-dark':  '#4A2A8A',
-            'purple-pale':  '#EDE8FA',
-            yellow:         '#FFE533',
-            'yellow-dark':  '#bba800',
-            pink:           '#E87BB5',
-            'pink-pale':    '#FBEAF0',
-            'pink-dark':    '#72243E',
-            'gray-bg':      '#F5F4FA',
-            'gray-text':    '#6b6880',
-          },
-          fontFamily: {
-            display: ['Boogaloo', 'cursive'],
-            body:    ['Nunito', 'sans-serif'],
-          },
-          borderRadius: {
-            DEFAULT: '12px',
-            sm:      '8px',
-            pill:    '30px',
-          },
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="/assets/tailwind.css?v=1">
   <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/custom.css">
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -45,7 +15,7 @@
 
   <!-- HEADER -->
   <header class="px-4 pt-4 pb-2">
-    <nav x-data="{ open: false }" class="bg-purple rounded-xl px-6 py-4 flex items-center justify-between relative">
+    <nav x-data="{ open: false }" class="bg-purple rounded-xl px-6 py-4 flex items-center justify-between relative overflow-visible">
       <a href="/index.html" class="flex items-center gap-2 flex-shrink-0">
         <span class="font-display text-3xl text-white">A.S.S.G</span>
         <span class="font-display text-xl text-yellow hidden sm:inline">· St-Genevière</span>
